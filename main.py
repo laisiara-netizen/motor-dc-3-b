@@ -1,8 +1,3 @@
-def on_logo_pressed():
-    robotbit.motor_run_dual(robotbit.Motors.M1A, 150, robotbit.Motors.M2A, 150)
-    basic.show_arrow(ArrowNames.NORTH)
-input.on_logo_event(TouchButtonEvent.PRESSED, on_logo_pressed)
-
 def on_button_pressed_a():
     robotbit.motor_run_dual(robotbit.Motors.M1A, 150, robotbit.Motors.M2A, 0)
     basic.show_arrow(ArrowNames.WEST)
@@ -18,6 +13,11 @@ def on_button_pressed_ab():
     basic.clear_screen()
     basic.show_icon(IconNames.HEART)
 input.on_button_pressed(Button.AB, on_button_pressed_ab)
+
+def on_logo_touched():
+    robotbit.motor_run_dual(robotbit.Motors.M1A, 150, robotbit.Motors.M2A, 150)
+    basic.show_arrow(ArrowNames.NORTH)
+input.on_logo_event(TouchButtonEvent.TOUCHED, on_logo_touched)
 
 def on_button_pressed_b():
     robotbit.motor_run_dual(robotbit.Motors.M1A, 0, robotbit.Motors.M2A, 150)
